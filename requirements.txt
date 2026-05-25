@@ -1,9 +1,10 @@
 pandas
 numpy
+catboost
 scikit_learn
 seaborn
-
-
+xgboost
+setuptools
 
 
 -e .

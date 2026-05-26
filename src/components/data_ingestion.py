@@ -9,6 +9,7 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+from src.components.data_transforamtion import DataTransforamtionConfig, DataTransforamtion
 
 
 @dataclass
@@ -47,5 +48,10 @@ class DataIngestion:
 if __name__=="__main__":
     logging.info("Testing of dataingestion  has started")
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_set, test_set = obj.initiate_data_ingestion()
+
+    data_transforamtion =  DataTransforamtion()
+    data_transforamtion.initiate_data_transforamtion(train_set, test_set)
+
+
 

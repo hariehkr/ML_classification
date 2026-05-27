@@ -4,7 +4,7 @@ sys.path.append(str(Path(__file__).resolve().parents[2])) # Modify the path dyna
 
 from src.exception import CustomException
 from src.logger import logging
-from src.utils import save_object, evalute_model
+from src.utils import save_object, evalute_models
 import pandas as pd
 import numpy as np
 
@@ -86,7 +86,7 @@ class ModelTrainer:
             }
 
 
-            model_report = evalute_model(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models, params=params)
+            model_report = evalute_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, models=models, params=params)
 
             # # to get the best model score from dict
             best_model_score = max(sorted(model_report.values()))
